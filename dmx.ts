@@ -12,7 +12,7 @@ namespace dmx {
     export function fixture(numChannels: number): string {
         let initcommand = "addFixture:" + numChannels.toString();
         serial.writeLine(initcommand);
-        let fixtureName = "fixture:" + numberFixtures.toString();
+        let fixtureName = numberFixtures.toString();
         numberFixtures++;
         return fixtureName;
     }
@@ -26,8 +26,7 @@ namespace dmx {
     //% weight=90
     //% blockId=dmx_updatechannel block="%fixture| update channel %channel| to %value" blockGap=8
     export function updateChannel(fixture: string, channel: number, value: number): void {
-        let fixtureNum = (fixture as any).split(":")[1];
-        let updatecommand = "setChannelValue:" + fixtureNum.toString() + "," + channel.toString() + "," + value.toString();
+        let updatecommand = "setChannelValue:" + fixture + "," + channel.toString() + "," + value.toString();
         serial.writeLine(updatecommand);
     }
 
