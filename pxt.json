@@ -1,0 +1,18 @@
+{
+    "name": "proximity",
+    "version": "1.0.10",
+    "description": "blocks for measuring distance between microbits",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*",
+        "serial": "*"
+    },
+    "files": [
+        "README.md",
+        "dmx.ts"
+    ],
+    "testFiles": [
+        "tests.ts"
+    ],
+    "public": true
+}

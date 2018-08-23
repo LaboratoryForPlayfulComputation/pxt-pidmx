@@ -1,0 +1,14 @@
+{
+    "name": "microbit2",
+    "dependencies": {
+        "core": "*",
+        "radio": "*",
+        "proximity": "github:laboratoryforplayfulcomputation/pxt-proximity#v1.0.3"
+    },
+    "description": "",
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md"
+    ]
+}

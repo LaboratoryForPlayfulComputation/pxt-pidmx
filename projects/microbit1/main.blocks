@@ -1,0 +1,33 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables></variables>
+  <block type="pxt-on-start" x="0" y="0">
+    <statement name="HANDLER">
+      <block type="radio_set_group">
+        <value name="ID">
+          <shadow type="math_number_minmax">
+            <mutation min="0" max="255"></mutation>
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="device_forever" x="1" y="96">
+    <statement name="HANDLER">
+      <block type="device_show_number">
+        <value name="number">
+          <shadow type="math_number" id="o10oaQIR$MRFksk0%Xkl">
+            <field name="NUM">0</field>
+          </shadow>
+          <block type="radio_other_signal">
+            <value name="serialNo">
+              <shadow type="math_number">
+                <field name="NUM">-1598746869</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+</xml>
