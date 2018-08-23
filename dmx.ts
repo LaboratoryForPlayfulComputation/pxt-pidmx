@@ -17,4 +17,28 @@ namespace dmx {
         return fixtureName;
     }
 
+    /**
+     * Update fixture channel's value
+     * @param fixture
+     * @param channel
+     * @param value
+     */
+    //% weight=90
+    //% blockId=dmx_updatechannel block="%fixture| update channel %channel| to %value" blockGap=8
+    export function updateChannel(fixture: string, channel: number, value: number): void {
+        let fixtureNum = (fixture as any).split(":")[1];
+        let updatecommand = "setChannelValue:" + fixtureNum.toString() + "," + channel.toString() + "," + value.toString();
+        serial.writeLine(updatecommand);
+    }
+
+    /**
+     * Send all channels to dmx controller
+     */
+    //% weight=90
+    //% blockId=dmx_send block="send dmx" blockGap=8
+    export function send(): void {
+        serial.writeLine("updateChannels");
+    }
+
+    
 }
