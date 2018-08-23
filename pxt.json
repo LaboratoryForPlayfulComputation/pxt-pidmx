@@ -4,8 +4,7 @@
     "description": "blocks for working with dmx over serial on pi",
     "license": "MIT",
     "dependencies": {
-        "core": "*",
-        "serial": "*"
+        "core": "*"
     },
     "files": [
         "README.md",
