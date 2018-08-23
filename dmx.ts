@@ -4,7 +4,7 @@ namespace dmx {
     let numberFixtures = 0;
 
     /**
-     * Init new fixture
+     * Initialize a new fixture in the DMX universe
      * @param numChannels
      */
     //% weight=90
