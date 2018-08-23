@@ -1,7 +1,7 @@
 {
-    "name": "proximity",
+    "name": "pidmx",
     "version": "1.0.10",
-    "description": "blocks for measuring distance between microbits",
+    "description": "blocks for working with dmx over serial on pi",
     "license": "MIT",
     "dependencies": {
         "core": "*",
