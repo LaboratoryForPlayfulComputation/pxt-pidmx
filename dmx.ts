@@ -106,6 +106,7 @@ namespace dmx {
      */
     //% weight=90
     //% blockId=dmx_setRGBchannels block="fixture %name|'s RGB channels are red: %redChannel| green: %greenChannel| blue: %blueChannel" blockGap=8
+    //% inlineInputMode="inline" 
     export function setRGBChannels(name: string, redChannel: number, greenChannel: number, blueChannel: number) {
         let fixture = findFixtureByName(name);
         if (fixture){
