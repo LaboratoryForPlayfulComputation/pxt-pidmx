@@ -78,7 +78,6 @@ namespace dmx {
         let fixtureName = numberFixtures.toString();
         fixtures.push(new Fixture(name, numChannels));
         numberFixtures++;
-        return fixtureName;
     }
 
     /**

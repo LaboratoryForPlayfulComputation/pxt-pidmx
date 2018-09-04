@@ -3,7 +3,7 @@
     <variable type="" id="B-b7dGQ*J7;Sk9IQg3rS">light1</variable>
     <variable type="" id="J@SEft5p!~IEtchP*9(V">index</variable>
   </variables>
-  <block type="pxt-on-start" x="-38" y="-16">
+  <block type="pxt-on-start" x="0" y="0">
     <statement name="HANDLER">
       <block type="variables_set">
         <field name="VAR" id="B-b7dGQ*J7;Sk9IQg3rS" variabletype="">light1</field>
@@ -105,7 +105,7 @@
       </block>
     </statement>
   </block>
-  <block type="device_forever" x="549" y="29">
+  <block type="device_forever" x="587" y="45">
     <statement name="HANDLER">
       <block type="serial_writeline">
         <value name="text">

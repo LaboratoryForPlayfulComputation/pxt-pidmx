@@ -8,7 +8,8 @@
     },
     "files": [
         "README.md",
-        "dmx.ts"
+        "dmx.ts",
+        "colors.ts"
     ],
     "testFiles": [
         "tests.ts"
