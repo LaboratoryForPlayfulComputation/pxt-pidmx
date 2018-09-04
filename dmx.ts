@@ -53,6 +53,9 @@ namespace dmx {
         constructor(fixtureName : string, numberChannels : number) {
             this.name = fixtureName;
             this.numChannels = numberChannels;
+            for (let i = 0; i < this.numChannels; i++){
+                this.channels.push(new Channel());
+            }
             this.RGBChannelsSet = false;
         }
     }
