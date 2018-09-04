@@ -1,8 +1,9 @@
 {
-    "name": "microbit-printer",
+    "name": "teststrobe",
     "dependencies": {
         "core": "*",
-        "radio": "*"
+        "radio": "*",
+        "pidmx": "github:laboratoryforplayfulcomputation/pxt-pidmx#v1.0.13"
     },
     "description": "",
     "files": [

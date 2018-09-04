@@ -1,5 +1,220 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <variables></variables>
-  <block type="pxt-on-start" x="20" y="20"></block>
-  <block type="device_forever" x="126" y="20"></block>
+  <variables>
+    <variable type="" id="B-b7dGQ*J7;Sk9IQg3rS">light1</variable>
+    <variable type="" id="J@SEft5p!~IEtchP*9(V">index</variable>
+  </variables>
+  <block type="pxt-on-start" x="-38" y="-16">
+    <statement name="HANDLER">
+      <block type="variables_set">
+        <field name="VAR" id="B-b7dGQ*J7;Sk9IQg3rS" variabletype="">light1</field>
+        <value name="VALUE">
+          <shadow type="math_number" id="FgSJyr3s3!|kA6S67UF=">
+            <field name="NUM">0</field>
+          </shadow>
+          <block type="dmx_initfixture">
+            <value name="numChannels">
+              <shadow type="math_number">
+                <field name="NUM">8</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="serial_writeline">
+            <value name="text">
+              <shadow type="text" id="BaVdPTFg=b^z=RWw.V^}">
+                <field name="TEXT"></field>
+              </shadow>
+              <block type="text_join">
+                <mutation items="5"></mutation>
+                <value name="ADD0">
+                  <shadow type="text">
+                    <field name="TEXT">setChannelValue:</field>
+                  </shadow>
+                </value>
+                <value name="ADD1">
+                  <shadow type="text">
+                    <field name="TEXT">0,</field>
+                  </shadow>
+                </value>
+                <value name="ADD2">
+                  <block type="math_number">
+                    <field name="NUM">3</field>
+                  </block>
+                </value>
+                <value name="ADD3">
+                  <block type="text">
+                    <field name="TEXT">,</field>
+                  </block>
+                </value>
+                <value name="ADD4">
+                  <block type="math_number">
+                    <field name="NUM">100</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="serial_writeline">
+                <value name="text">
+                  <shadow type="text" id="BaVdPTFg=b^z=RWw.V^}">
+                    <field name="TEXT"></field>
+                  </shadow>
+                  <block type="text_join">
+                    <mutation items="5"></mutation>
+                    <value name="ADD0">
+                      <shadow type="text">
+                        <field name="TEXT">setChannelValue:</field>
+                      </shadow>
+                    </value>
+                    <value name="ADD1">
+                      <shadow type="text">
+                        <field name="TEXT">0,</field>
+                      </shadow>
+                    </value>
+                    <value name="ADD2">
+                      <block type="math_number">
+                        <field name="NUM">4</field>
+                      </block>
+                    </value>
+                    <value name="ADD3">
+                      <block type="text">
+                        <field name="TEXT">,</field>
+                      </block>
+                    </value>
+                    <value name="ADD4">
+                      <block type="math_number">
+                        <field name="NUM">255</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="serial_writeline">
+                    <value name="text">
+                      <shadow type="text">
+                        <field name="TEXT">updateChannels</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="device_forever" x="549" y="29">
+    <statement name="HANDLER">
+      <block type="serial_writeline">
+        <value name="text">
+          <shadow type="text" id="BaVdPTFg=b^z=RWw.V^}">
+            <field name="TEXT"></field>
+          </shadow>
+          <block type="text_join">
+            <mutation items="5"></mutation>
+            <value name="ADD0">
+              <shadow type="text">
+                <field name="TEXT">setChannelValue:</field>
+              </shadow>
+            </value>
+            <value name="ADD1">
+              <shadow type="text">
+                <field name="TEXT">0,</field>
+              </shadow>
+            </value>
+            <value name="ADD2">
+              <block type="math_number">
+                <field name="NUM">6</field>
+              </block>
+            </value>
+            <value name="ADD3">
+              <block type="text">
+                <field name="TEXT">,</field>
+              </block>
+            </value>
+            <value name="ADD4">
+              <block type="math_number">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="serial_writeline">
+            <value name="text">
+              <shadow type="text">
+                <field name="TEXT">updateChannels</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="device_pause">
+                <value name="pause">
+                  <shadow type="math_number">
+                    <field name="NUM">5</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="serial_writeline">
+                    <value name="text">
+                      <shadow type="text" id="BaVdPTFg=b^z=RWw.V^}">
+                        <field name="TEXT"></field>
+                      </shadow>
+                      <block type="text_join">
+                        <mutation items="5"></mutation>
+                        <value name="ADD0">
+                          <shadow type="text">
+                            <field name="TEXT">setChannelValue:</field>
+                          </shadow>
+                        </value>
+                        <value name="ADD1">
+                          <shadow type="text">
+                            <field name="TEXT">0,</field>
+                          </shadow>
+                        </value>
+                        <value name="ADD2">
+                          <block type="math_number">
+                            <field name="NUM">6</field>
+                          </block>
+                        </value>
+                        <value name="ADD3">
+                          <block type="text">
+                            <field name="TEXT">,</field>
+                          </block>
+                        </value>
+                        <value name="ADD4">
+                          <block type="math_number">
+                            <field name="NUM">255</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="serial_writeline">
+                        <value name="text">
+                          <shadow type="text">
+                            <field name="TEXT">updateChannels</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="device_pause">
+                            <value name="pause">
+                              <shadow type="math_number">
+                                <field name="NUM">5</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
 </xml>
