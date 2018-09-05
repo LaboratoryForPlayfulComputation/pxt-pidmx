@@ -16,11 +16,14 @@ namespace dmx {
             this.name = fixtureName;
             this.channels = [];
             this.numChannels = numberChannels;
-            for (let i = 0; i < this.numChannels; i++) {
+            let i = 0;
+            while (i < this.numChannels) {
                 let channel = new Channel();
                 this.channels.push(channel);
+                i++;
             }
             this.RGBChannelsSet = false;
+            console.log("finished initializing fixture channels");
         }
     }
 
@@ -42,8 +45,10 @@ namespace dmx {
     export function createFixture(name: string, numChannels: number) {
         let initcommand = "addFixture:" + name + "," + numChannels.toString();
         serial.writeLine(initcommand);
+        console.log("createFixture: wrote to serial");
         let newFixture = new Fixture(name, numChannels);
         allFixtures.push(newFixture);
+        console.log("createFixture: finished initializing fixture");
     }
 
     /**
