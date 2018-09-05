@@ -1,7 +1,7 @@
 //% color=#ab86f9 weight=5 icon="\uf140"
 namespace dmx {
 
-    let fixtures : Array<Fixture>;
+    let allFixtures : Array<Fixture> = [];
 
     export class Fixture {
         public name : string;
@@ -14,9 +14,11 @@ namespace dmx {
 
         constructor(fixtureName : string, numberChannels : number) {
             this.name = fixtureName;
+            this.channels = [];
             this.numChannels = numberChannels;
-            for (let i = 0; i < this.numChannels; i++){
-                this.channels.push(new Channel());
+            for (let i = 0; i < this.numChannels; i++) {
+                let channel = new Channel();
+                this.channels.push(channel);
             }
             this.RGBChannelsSet = false;
         }
@@ -41,7 +43,7 @@ namespace dmx {
         let initcommand = "addFixture:" + name + "," + numChannels.toString();
         serial.writeLine(initcommand);
         let newFixture = new Fixture(name, numChannels);
-        fixtures.push(newFixture);
+        allFixtures.push(newFixture);
     }
 
     /**
@@ -134,8 +136,8 @@ namespace dmx {
     }
 
     export function findFixtureByName(name: string) : Fixture {
-        for (let i = 0; i < fixtures.length; i++){
-            let fixture = fixtures[i];
+        for (let i = 0; i < allFixtures.length; i++){
+            let fixture = allFixtures[i];
             if (fixture.name == name){
                 return fixture;
             }
