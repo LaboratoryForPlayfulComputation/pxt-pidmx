@@ -105,6 +105,12 @@ namespace dmx {
             fixture.channels[fixture.redChannel].value = red;
             fixture.channels[fixture.greenChannel].value = green;
             fixture.channels[fixture.blueChannel].value = blue;
+            let updateRedCommand = "setChannelValue:" + name + "," + fixture.redChannel.toString() + "," + red.toString();
+            let updateGreenCommand = "setChannelValue:" + name + "," + fixture.greenChannel.toString() + "," + green.toString();
+            let updateBlueCommand = "setChannelValue:" + name + "," + fixture.blueChannel.toString() + "," + blue.toString();
+            serial.writeLine(updateRedCommand);            
+            serial.writeLine(updateGreenCommand);            
+            serial.writeLine(updateBlueCommand);            
             send();
         }        
     }
