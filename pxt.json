@@ -1,6 +1,6 @@
 {
     "name": "pidmx",
-    "version": "1.0.23",
+    "version": "1.0.24",
     "description": "blocks for working with dmx over serial on pi",
     "license": "MIT",
     "dependencies": {
