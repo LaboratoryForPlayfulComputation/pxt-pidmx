@@ -40,7 +40,8 @@ namespace dmx {
     export function createFixture(name: string, numChannels: number) {
         let initcommand = "addFixture:" + name + "," + numChannels.toString();
         serial.writeLine(initcommand);
-        fixtures.push(new Fixture(name, numChannels));
+        let newFixture = new Fixture(name, numChannels);
+        fixtures.push(newFixture);
     }
 
     /**
