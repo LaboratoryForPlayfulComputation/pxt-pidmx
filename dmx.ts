@@ -1,8 +1,7 @@
 //% color=#ab86f9 weight=5 icon="\uf140"
 namespace dmx {
 
-    let numberFixtures = 0;
-    let fixtures : Array<Fixture>= [];
+    let fixtures : Array<Fixture>;
 
     export class Fixture {
         public name : string;
@@ -41,9 +40,7 @@ namespace dmx {
     export function createFixture(name: string, numChannels: number) {
         let initcommand = "addFixture:" + name + "," + numChannels.toString();
         serial.writeLine(initcommand);
-        let fixtureName = numberFixtures.toString();
         fixtures.push(new Fixture(name, numChannels));
-        numberFixtures++;
     }
 
     /**
@@ -56,7 +53,7 @@ namespace dmx {
     //% blockId=dmx_updatefixturechannel block="update fixture %name| channel %numChannels| to %value" blockGap=8
     export function updateFixtureChannel(name: string, channel: number, value: number) {
         let fixture = findFixtureByName(name);
-        if (fixture){
+        if (fixture) {
             fixture.channels[channel].value = value;
             let updatecommand = "setChannelValue:" + name + "," + channel.toString() + "," + value.toString();
             serial.writeLine(updatecommand);
@@ -75,7 +72,7 @@ namespace dmx {
     //% inlineInputMode="inline" 
     export function setRGBChannels(name: string, redChannel: number, greenChannel: number, blueChannel: number) {
         let fixture = findFixtureByName(name);
-        if (fixture){
+        if (fixture) {
             fixture.redChannel = redChannel;
             fixture.greenChannel = greenChannel;
             fixture.blueChannel = blueChannel;
