@@ -10,7 +10,9 @@ namespace dmx {
         public redChannel : number;
         public greenChannel : number;
         public blueChannel : number;
+        public masterBrightnessChannel : number;
         public RGBChannelsSet : boolean;
+        public masterBrightnessChannelSet : boolean;
 
         constructor(fixtureName : string, numberChannels : number) {
             this.name = fixtureName;
@@ -23,6 +25,7 @@ namespace dmx {
                 i++;
             }
             this.RGBChannelsSet = false;
+            this.masterBrightnessChannelSet = false;
             console.log("finished initializing fixture channels");
         }
     }
@@ -88,13 +91,30 @@ namespace dmx {
         }        
     }
 
+
+     /**
+     * Set which channel is the master brightness for the fixture
+     * @param name
+     * @param masterchannel
+     */
+    //% weight=90
+    //% blockId=dmx_setBrightnessChannel block="fixture %name|'s master brightness channel is: %masterChannel" blockGap=8
+    //% inlineInputMode="inline" 
+    export function setBrightnessChannel(name: string, masterChannel: number) {
+        let fixture = findFixtureByName(name);
+        if (fixture) {
+            fixture.masterBrightnessChannel = masterChannel;
+            fixture.masterBrightnessChannelSet = true;
+        }        
+    }   
+
     /**
      * Update color of fixture
      * @param name
      * @param color
      */
     //% weight=90
-    //% blockId=dmx_updateFixtureChannel block="fixture %name| set color to %color" blockGap=8
+    //% blockId=dmx_updateFixtureColor block="fixture %name| set color to %color" blockGap=8
     export function updateFixtureColor(name: string, color: number) {
         let fixture = findFixtureByName(name);
         if (fixture && fixture.RGBChannelsSet){
@@ -114,6 +134,24 @@ namespace dmx {
             send();
         }        
     }
+
+     /**
+     * Update master brightness of fixture
+     * @param name
+     * @param brightness the master brightness of the lighting fixture between ``0`` and ``255``, eg: 100
+     */
+    //% weight=90
+    //% blockId=dmx_updateFixtureMasterBrightness block="fixture %name| set brightness to %brightness" blockGap=8
+    //% brightness.min=0 brightness.max=255
+    export function updateFixtureMasterBrightness(name: string, brightness: number) {
+        let fixture = findFixtureByName(name);
+        if (fixture && fixture.masterBrightnessChannelSet){
+            fixture.channels[fixture.masterBrightnessChannel].value = brightness;
+            let updateBrightnessCommand = "setChannelValue:" + name + "," + fixture.masterBrightnessChannel.toString() + "," + brightness.toString();
+            serial.writeLine(updateBrightnessCommand);            
+            send();
+        }        
+    }   
 
     /**
      * Send all channels to dmx controller
