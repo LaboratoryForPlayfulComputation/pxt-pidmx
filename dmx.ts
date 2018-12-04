@@ -1,3 +1,25 @@
+/**
+ * Well known color prefabs
+ */
+enum Colors {
+    //% block=red
+    Red = 0xFF0000,
+    //% block=orange
+    Orange = 0xFFA500,
+    //% block=yellow
+    Yellow = 0xFFFF00,
+    //% block=green
+    Green = 0x00FF00,
+    //% block=blue
+    Blue = 0x0000FF,
+    //% block=purple
+    Purple = 0xFF00FF,
+    //% block=white
+    White = 0xFFFFFF,
+    //% block=black
+    Black = 0x000000
+}
+
 //% color=#ab86f9 weight=5 icon="\uf140"
 namespace dmx {
 
@@ -176,6 +198,16 @@ namespace dmx {
     export function rgb(red: number, green: number, blue: number): number {
         return ((red & 0xFF) << 16) | ((green & 0xFF) << 8) | (blue & 0xFF);
     }
+
+    /**
+     * Gets the value of a known color
+    */
+    //% weight=2 blockGap=8
+    //% blockId="dmx_colors" block="%color"
+    //% advanced=true
+    export function colors(color: Colors): number {
+        return color;
+    }    
 
     export function hexToRgb(hex: number): Array<number> {
         let r = (hex >> 16) & 255;
