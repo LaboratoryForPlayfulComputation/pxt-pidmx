@@ -48,7 +48,6 @@ namespace dmx {
             }
             this.RGBChannelsSet = false;
             this.masterBrightnessChannelSet = false;
-            console.log("finished initializing fixture channels");
         }
     }
 
@@ -70,10 +69,8 @@ namespace dmx {
     export function createFixture(name: string, numChannels: number) {
         let initcommand = "addFixture:" + name + "," + numChannels.toString();
         serial.writeLine(initcommand);
-        console.log("createFixture: wrote to serial");
         let newFixture = new Fixture(name, numChannels);
         allFixtures.push(newFixture);
-        console.log("createFixture: finished initializing fixture");
     }
 
     /**
@@ -204,7 +201,6 @@ namespace dmx {
     */
     //% weight=2 blockGap=8
     //% blockId="dmx_colors" block="%color"
-    //% advanced=true
     export function colors(color: Colors): number {
         return color;
     }    
