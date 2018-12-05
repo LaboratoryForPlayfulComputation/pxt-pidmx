@@ -20,6 +20,7 @@ enum Colors {
     Black = 0x000000
 }
 
+
 //% color=#ab86f9 weight=5 icon="\uf140"
 namespace dmx {
 
@@ -173,7 +174,7 @@ namespace dmx {
     }   
 
     /**
-     * Send all channels to dmx controller
+     * Send all updated channels to dmx controller
      */
     //% weight=90
     //% blockId=dmx_send block="send dmx" blockGap=8
