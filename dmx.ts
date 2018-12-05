@@ -113,8 +113,8 @@ namespace dmx {
 
      /**
      * Set which channel is the master brightness for the fixture
-     * @param name
-     * @param masterchannel
+     * @param name The name of the lighting fixture
+     * @param masterchannel The channel that controls the master dim setting of the fixture, eg: 3
      */
     //% weight=90
     //% blockId=dmx_setBrightnessChannel block="fixture %name|'s master brightness channel is: %masterChannel" blockGap=8
@@ -156,8 +156,8 @@ namespace dmx {
 
      /**
      * Update master brightness of fixture
-     * @param name
-     * @param brightness the master brightness of the lighting fixture between 0 and 255. eg: 100
+     * @param name The name of the lighting fixture
+     * @param brightness The master brightness of the lighting fixture between 0 and 255, eg: 100
      */
     //% weight=90
     //% blockId=dmx_updateFixtureMasterBrightness block="fixture %name| set brightness to %brightness" blockGap=8
