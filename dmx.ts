@@ -62,7 +62,7 @@ namespace dmx {
     /**
      * Initialize a new fixture in the DMX universe
      * @param name
-     * @param numChannels
+     * @param numChannels 
      */
     //% weight=90
     //% blockId=dmx_createfixture block="create fixture %name| with %numChannels| channels" blockGap=8
@@ -157,7 +157,7 @@ namespace dmx {
      /**
      * Update master brightness of fixture
      * @param name
-     * @param brightness the master brightness of the lighting fixture between ``0`` and ``255``, eg: 100
+     * @param brightness the master brightness of the lighting fixture between 0 and 255. eg: 100
      */
     //% weight=90
     //% blockId=dmx_updateFixtureMasterBrightness block="fixture %name| set brightness to %brightness" blockGap=8
