@@ -94,9 +94,9 @@ namespace dmx {
     /**
      * Set which channels are RGB channels for the fixture
      * @param name The name of the lighting fixture
-     * @param redChannel The channel that controls the red setting, eg: 2
-     * @param greenChannel The channel that controls the green setting, eg: 3
-     * @param blueChannel The channel that controls the blue setting, eg: 4
+     * @param redChannel The channel that controls the red setting, eg: 1
+     * @param greenChannel The channel that controls the green setting, eg: 2
+     * @param blueChannel The channel that controls the blue setting, eg: 3
      */
     //% weight=90
     //% blockId=dmx_setRGBchannels block="fixture %name|'s RGB channels are red: %redChannel| green: %greenChannel| blue: %blueChannel" blockGap=8
@@ -115,7 +115,7 @@ namespace dmx {
      /**
      * Set which channel is the master brightness for the fixture
      * @param name The name of the lighting fixture
-     * @param masterchannel The channel that controls the master dim setting of the fixture, eg: 1
+     * @param masterchannel The channel that controls the master dim setting of the fixture, eg: 0
      */
     //% weight=90
     //% blockId=dmx_setBrightnessChannel block="fixture %name|'s master brightness channel is: %masterChannel" blockGap=8
