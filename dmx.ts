@@ -62,8 +62,8 @@ namespace dmx {
     
     /**
      * Initialize a new fixture in the DMX universe
-     * @param name
-     * @param numChannels 
+     * @param name The name you want to use to refer to your lighting fixture
+     * @param numChannels The number of channels your fixture has, eg: 8
      */
     //% weight=90
     //% blockId=dmx_createfixture block="create fixture %name| with %numChannels| channels" blockGap=8
@@ -93,10 +93,10 @@ namespace dmx {
 
     /**
      * Set which channels are RGB channels for the fixture
-     * @param name
-     * @param redChannel
-     * @param greenChannel
-     * @param blueChannel
+     * @param name The name of the lighting fixture
+     * @param redChannel The channel that controls the red setting, eg: 2
+     * @param greenChannel The channel that controls the green setting, eg: 3
+     * @param blueChannel The channel that controls the blue setting, eg: 4
      */
     //% weight=90
     //% blockId=dmx_setRGBchannels block="fixture %name|'s RGB channels are red: %redChannel| green: %greenChannel| blue: %blueChannel" blockGap=8
@@ -115,7 +115,7 @@ namespace dmx {
      /**
      * Set which channel is the master brightness for the fixture
      * @param name The name of the lighting fixture
-     * @param masterchannel The channel that controls the master dim setting of the fixture, eg: 3
+     * @param masterchannel The channel that controls the master dim setting of the fixture, eg: 1
      */
     //% weight=90
     //% blockId=dmx_setBrightnessChannel block="fixture %name|'s master brightness channel is: %masterChannel" blockGap=8
